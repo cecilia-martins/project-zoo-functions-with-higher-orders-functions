@@ -1,17 +1,16 @@
 const data = require('../data/zoo_data');
 
-function getEmployeeByName(employeeName) {
+function getEmployeeByName(name) {
   // Esta função é responsável pela busca das pessoas colaboradoras através do primeiro ou do último nome delas
   // Sem parâmetros, retorna um objeto vazio
   // Quando provido o primeiro nome do funcionário, retorna o objeto do funcionário
   // Quando provido o último nome do funcionário, retorna o objeto do funcionário
-  if (employeeName === undefined) {
+  if (name === undefined) {
     return {};
   }
-  const empreguete = data.employees.find((cadaEl) => cadaEl.firstName === employeeName || cadaEl.lastName === employeeName);
+  const emp = data.employees.find((El) => El.firstName === name || El.lastName === name);
 
-
-  return empreguete;
+  return emp;
 }
-console.log(getEmployeeByName('Emery'));
+// console.log(getEmployeeByName('Emery'));
 module.exports = getEmployeeByName;
