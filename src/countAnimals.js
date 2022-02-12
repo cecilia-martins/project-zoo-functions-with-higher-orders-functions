@@ -36,4 +36,5 @@ function countAnimals(animal) {
   return qntAnimals(animal);
 }
 countAnimals({ specie: 'penguins' });
+
 module.exports = countAnimals;
