@@ -1,4 +1,4 @@
-const data = require('../data/zoo_data');
+const { prices } = require('../data/zoo_data');
 // const entrants = [
 //   { name: 'Lara Carvalho', age: 5 },
 //   { name: 'Frederico Moreira', age: 5 },
@@ -9,6 +9,12 @@ const data = require('../data/zoo_data');
 // ];
 
 function countEntrants(entrants) {
+  // if (entrants === undefined) {
+  //   console.log('não funfa');
+  // }
+  // if (entrants.length === undefined) {
+  //   console.log('djfhajsdfh');
+  // }
   const objetoVazio = {};
   const idades = entrants.map((cadaEl) => cadaEl.age);
   const qntMenores = idades.filter((cadaIdade) => cadaIdade < 18);
@@ -22,32 +28,21 @@ function countEntrants(entrants) {
 
   return objetoVazio;
 }
-console.log(countEntrants([
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Frederico Moreira', age: 5 },
-  { name: 'Pedro Henrique Carvalho', age: 5 },
-  { name: 'Maria Costa', age: 18 },
-  { name: 'Núbia Souza', age: 18 },
-  { name: 'Carlos Nogueira', age: 50 },
-]));
 
 function calculateEntry(entrants) {
-  
-  const umValorReal = {} // retorna um objeto com a contagem;
+  if (entrants === undefined || entrants.length === undefined) {
+    return 0;
+  }
+  const crianca = countEntrants(entrants).child;
+  const adulto = countEntrants(entrants).adult;
+  const veio = countEntrants(entrants).senior;
+  const priceChild = prices.child;
+  const priceAdult = prices.adult;
+  const priceSenior = prices.senior;
 
-  countEntrants(entrants); // usar essa função para implementar a função calculateEntry
-
-  // quantidade de visitantes
-  entrants.length?
-  // e faixa etaria? 
-  // const idades = entrants.map((cadaEl) => cadaEl.age); // as idades
-
-  countEntrants(entrants); //
-
-  return umValorReal // deverá retornar o valor total a ser cobrado em um obj???
-  
-                     
+  const valorTotal = (crianca * priceChild) + (adulto * priceAdult) + (veio * priceSenior);
+  return valorTotal;
 }
-// console.log(calculateEntry());
+// console.log(countEntrants());
 
 module.exports = { calculateEntry, countEntrants };
