@@ -1,13 +1,11 @@
 const data = require('../data/zoo_data');
 
 function getSpeciesByIds(...ids) {
-  // buscar animal pela id?
-  // console.log(ids);
-  // //////////cada elemento do array///indo comparar//entrando no especies//pegando cada um // comparando
-  const idsParam = ids.map((item) => data.species.find((elemento) => elemento.id === item));
-  /* const infoAnimals = data.species.filter((elemento) => elemento.id === ids); */
+  // buscar animal pela id
+  const idsParam = ids.map((cadaAnimal) =>
+    data.species.find((elemento) => elemento.id === cadaAnimal));
+
   return idsParam;
-  // SE? não receber um parametro, retorne um array vazio vazio //FILTER FAZ ISSO
 }
 console.log(getSpeciesByIds());
 module.exports = getSpeciesByIds;

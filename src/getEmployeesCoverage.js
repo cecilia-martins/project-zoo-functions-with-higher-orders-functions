@@ -1,11 +1,5 @@
 const { species, employees } = require('../data/zoo_data');
 
-// {
-//   "id": "4b40a139-d4dc-4f09-822d-ec25e819a5ad", // id da pessoa
-//   "fullName": "Sharonda Spry", // nome completo: firstName + lastName
-//   "species": [ "otters", "frogs" ], // espécies as quais a pessoa é responsável
-//   "locations": [ "SE", "SW" ], // Um array contendo todas as localizações das espécies
-// }
 function semParam() {
   const tt = employees.map((cadaEmpregado) => {
     const especies = species.filter((cadaAnimal) => cadaEmpregado.responsibleFor

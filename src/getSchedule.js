@@ -1,14 +1,5 @@
 const { hours, species } = require('../data/zoo_data');
 
-// function exibicoes(day) { // função pra receber
-//   const days = Object.keys(hours);
-//   const verifica = species.filter((cadaAnimal) => cadaAnimal.availability.includes());
-//   // const nomesAnimais = verifica.
-
-//   return verifica;
-// }
-// console.log(exibicoes());
-//
 function semParamValido() {
   const days = Object.keys(hours); // array de dias
 
@@ -28,7 +19,7 @@ function semParamValido() {
 
   return tt;
 }
-//
+
 function onlyDay(day) {
   const objetoComObj = semParamValido();
   const diaSeparado = { [day]: objetoComObj[day] };
